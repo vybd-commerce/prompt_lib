@@ -574,17 +574,23 @@ body.is-ready .hero-word-inner:nth-child(10){transition-delay:.50s}
   margin: 0;
 }
 
-#video-panel-section .about-paragraphs {
-  width: 50%;
-  margin-left: auto;
+#video-panel-section .about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-top: 10vh;
   margin-bottom: 20vh;
+  width: 100%;
+}
+
+#video-panel-section .about-paragraphs {
+  width: 50%;
   font-size: 1.5rem;
   line-height: 1.6;
 }
 
 #video-panel-start {
-  width: 50%;
+  width: 45%;
   aspect-ratio: 16/9;
 }
 
@@ -783,22 +789,24 @@ body.is-ready .hero-word-inner:nth-child(10){transition-delay:.50s}
           <h1 id="h1-tagline">WITHIN REACH</h1>
       </div>
   </div>
-  <div class="about-paragraphs">
-      <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Neque senectus sapien cras pharetra orci lorem
-          quam arcu senectus.
-      </p>
-      <p>
-          Aliquam at risus; odio curabitur justo commodo aliquam tristique aenean. Aptent orci
-          aliquam auctor eu metus. Ridiculus risus luctus varius elementum elementum. Nulla massa magnis urna
-          malesuada orci parturient.
-      </p>
-      <p>
-          Nisi finibus magna pellentesque sapien conubia ante consequat morbi at.
-          Ante turpis auctor posuere aptent nostra.
-      </p>
+  <div class="about-content">
+      <div id="video-panel-start"></div>
+      <div class="about-paragraphs">
+          <p>
+              Lorem ipsum odor amet, consectetuer adipiscing elit. Neque senectus sapien cras pharetra orci lorem
+              quam arcu senectus.
+          </p>
+          <p>
+              Aliquam at risus; odio curabitur justo commodo aliquam tristique aenean. Aptent orci
+              aliquam auctor eu metus. Ridiculus risus luctus varius elementum elementum. Nulla massa magnis urna
+              malesuada orci parturient.
+          </p>
+          <p>
+              Nisi finibus magna pellentesque sapien conubia ante consequat morbi at.
+              Ante turpis auctor posuere aptent nostra.
+          </p>
+      </div>
   </div>
-  <div id="video-panel-start"></div>
   <div id="video-panel-end-parent">
       <div id="video-panel-end"></div>
   </div>
