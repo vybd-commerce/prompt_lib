@@ -1,0 +1,16 @@
+{
+  "name": "lusion-pipe-clone",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "three": "^0.158.0"
+  },
+  "devDependencies": {
+    "vite": "^5.3.4",
+    "vite-plugin-glsl": "^1.3.0"
+  }
+}

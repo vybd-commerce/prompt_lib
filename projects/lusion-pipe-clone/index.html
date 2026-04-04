@@ -617,7 +617,7 @@ body.is-ready .hero-word-inner:nth-child(10){transition-delay:.50s}
 <div id="cursor"></div>
 <div id="cursor-follower"></div>
 <div id="scroll-indicator"><div id="scroll-indicator-bar"></div></div>
-<canvas id="video-canvas-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;"></canvas>
+<canvas id="video-canvas-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
 <svg id="pipe-svg"></svg>
 
 <!-- ── HEADER ─────────────────────────────────────────────────── -->
@@ -1365,5 +1365,6 @@ class Pipe2D {
 window.pipe2d = new Pipe2D();
 
 </script>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>
