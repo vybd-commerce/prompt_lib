@@ -536,7 +536,7 @@
     #home-reel {
       min-height: 100vh;
       padding-top: calc(var(--py)*3);
-      padding-bottom: calc(var(--py)*3);
+      padding-bottom: 0;
       align-content: center;
     }
 
@@ -584,6 +584,7 @@
       margin-top: calc(var(--py)*2);
       position: relative;
       aspect-ratio: 16/9;
+      max-height: 85vh; /* Ensure video fits on screen */
       border-radius: var(--br);
       overflow: hidden;
       cursor: pointer;
@@ -1063,7 +1064,7 @@
       #home-reel {
         min-height: auto;
         padding-top: calc(var(--py)*2);
-        padding-bottom: calc(var(--py)*2);
+        padding-bottom: 0;
       }
 
       #home-reel-title {
@@ -2019,9 +2020,9 @@
         { clipPath: 'inset(0% 0% 0% 45% round 18px)', rotation: -1.8, transformOrigin: 'right center' },
         {
           scrollTrigger: {
-            trigger: '#home-reel',
-            start: 'center 85%',
-            end: 'bottom 70%',
+            trigger: '#home-reel-video',
+            start: 'top 85%',
+            end: 'center center',
             scrub: 1.5,
           },
           clipPath: 'inset(0% 0% 0% 0% round 10px)',
@@ -2030,19 +2031,7 @@
         }
       );
 
-      // REEL — racetrack canvas scroll scrub (frame 0→191 as section scrolls through viewport)
-      ScrollTrigger.create({
-        trigger: '#home-reel-video',
-        start: 'top bottom',
-        end: 'bottom top',
-        onUpdate: (self) => {
-          const frameIdx = Math.min(
-            Math.floor(self.progress * RACETRACK_COUNT),
-            RACETRACK_COUNT - 1
-          );
-          drawRacetrackCanvas(frameIdx);
-        },
-      });
+
 
       window.addEventListener('resize', () => {
         if (racetrackCanvas) racetrackCanvas.width = 0;
