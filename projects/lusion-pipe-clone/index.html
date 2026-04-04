@@ -544,6 +544,70 @@ body.is-ready .hero-word-inner:nth-child(10){transition-delay:.50s}
   pointer-events: none;
   overflow: visible;
 }
+
+/* ──────────────────────────────────────────────────────────────────
+   VIDEO PANEL SHADER STYLES
+────────────────────────────────────────────────────────────────── */
+#video-panel-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10vw;
+  z-index: 2;
+  margin-top: 10vh;
+}
+
+#video-panel-section .about-headers {
+  position: relative;
+  margin-top: 10vh;
+}
+
+#video-panel-section .animated-h1-container {
+  overflow: hidden;
+}
+
+#video-panel-section h1 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#video-panel-section .about-paragraphs {
+  width: 50%;
+  margin-left: auto;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+#video-panel-start {
+  width: 50%;
+  aspect-ratio: 16/9;
+}
+
+#video-panel-end-parent {
+  position: relative;
+  width: 100%;
+  margin: 20vh auto 10vh auto;
+  aspect-ratio: 16/9;
+}
+
+@media (min-aspect-ratio: 3/2) {
+  #video-panel-end-parent {
+      height: 70vh;
+      aspect-ratio: unset;
+  }
+}
+
+#video-panel-end {
+  position: absolute;
+  top: -70%;
+  width: 100%;
+  height: 100%;
+}
 </style>
 </head>
 <body>
@@ -553,6 +617,7 @@ body.is-ready .hero-word-inner:nth-child(10){transition-delay:.50s}
 <div id="cursor"></div>
 <div id="cursor-follower"></div>
 <div id="scroll-indicator"><div id="scroll-indicator-bar"></div></div>
+<canvas id="video-canvas-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;"></canvas>
 <svg id="pipe-svg"></svg>
 
 <!-- ── HEADER ─────────────────────────────────────────────────── -->
@@ -705,6 +770,37 @@ body.is-ready .hero-word-inner:nth-child(10){transition-delay:.50s}
       <p class="home-goal-texts-paragraph">We do not chase trends or produce work that looks like everyone else. We focus on creating visually distinctive digital experiences that reflect your brand, engage your audience, and make people remember what they saw.</p>
       <p class="home-goal-texts-paragraph">Our process blends creative direction, 3D craft, and interactive development to build tailored digital journeys that feel original, polished, and built for impact.</p>
     </div>
+  </div>
+</section>
+
+<!-- ── VIDEO PANEL SECTION (PORTED) ──────────────────────────────── -->
+<section id="video-panel-section" class="section">
+  <div class="about-headers">
+      <div class="animated-h1-container">
+          <h1 id="h1-topline">BEYOND VISIONS</h1>
+      </div>
+      <div class="animated-h1-container">
+          <h1 id="h1-tagline">WITHIN REACH</h1>
+      </div>
+  </div>
+  <div class="about-paragraphs">
+      <p>
+          Lorem ipsum odor amet, consectetuer adipiscing elit. Neque senectus sapien cras pharetra orci lorem
+          quam arcu senectus.
+      </p>
+      <p>
+          Aliquam at risus; odio curabitur justo commodo aliquam tristique aenean. Aptent orci
+          aliquam auctor eu metus. Ridiculus risus luctus varius elementum elementum. Nulla massa magnis urna
+          malesuada orci parturient.
+      </p>
+      <p>
+          Nisi finibus magna pellentesque sapien conubia ante consequat morbi at.
+          Ante turpis auctor posuere aptent nostra.
+      </p>
+  </div>
+  <div id="video-panel-start"></div>
+  <div id="video-panel-end-parent">
+      <div id="video-panel-end"></div>
   </div>
 </section>
 
